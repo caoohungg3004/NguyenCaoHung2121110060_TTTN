@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orderdetail extends Model
 {
     use HasFactory;
-    protected $table='2121110052_orderdetail';
+    protected $table='2121110060_orderdetail';
     public $timestamps = false;
 
 }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('2121110052_category', function (Blueprint $table) {
+        Schema::create('2121110060_category', function (Blueprint $table) {
             $table->id();
             $table->string('name',1000)->unique()->comment('Tên loại');
             $table->string('slug',1000)->unique();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('2121110052_category');
+        Schema::dropIfExists('2121110060_category');
     }
 };

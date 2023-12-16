@@ -22,6 +22,8 @@ use App\Http\Controllers\backend\PostController;
 use App\Http\Controllers\backend\TopicController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\SliderController;
+use App\Http\Controllers\backend\CustomerController;
+
 use App\Http\Controllers\PaginateController;
 
 Route::get('/',[SiteController::class,'index'])->name("site.index");
@@ -107,7 +109,14 @@ Route::prefix('admin') ->middleware('loginadmin')->group(function(){
     Route::get('menu/delete/{menu}',[MenuController::class,'delete'])->name('menu.delete');
     Route::get('menu/restore/{menu}',[MenuController::class,'restore'])->name('menu.restore');
     Route::get('menu/destroy/{menu}',[MenuController::class,'destroy'])->name('menu.destroy');
-
+    
+    Route::resource('customer', CustomerController::class);
+    Route::get('customer_trash',[CustomerController::class,'trash'])->name('customer.trash');
+    Route::get('customer/status/{customer}',[CustomerController::class,'status'])->name('customer.status');
+    Route::get('customer/delete/{customer}',[CustomerController::class,'delete'])->name('customer.delete');
+    Route::get('customer/restore/{customer}',[CustomerController::class,'restore'])->name('customer.restore');
+    Route::get('customer/destroy/{customer}',[CustomerController::class,'destroy'])->name('customer.destroy');
+ 
     //order
     Route::resource('order', OrderController::class);
     Route::get('order_trash',[OrderController::class,'trash'])->name('order.trash');

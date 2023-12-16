@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('2121110052_post', function (Blueprint $table) {
+        Schema::create('2121110060_post', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('topic_id')->comment('mã ');
             $table->string('title', 1000)->default('text');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('2121110052_post');
+        Schema::dropIfExists('2121110060_post');
     }
 };

@@ -11,7 +11,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Danh Mục</h1>
+          <h1>Quản Lí khách hàng</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -32,8 +32,9 @@
         <h3 class="card-title">Title</h3>
 
         <div class="card-tools">
-          <a href="{{ route('category.create') }}" class="btn bg-success"><i class="fa-solid fa-plus"></i> Thêm </a>
-          <a class=" btn  bg-danger" href="{{ route('category.trash') }}"> <i class="fa fa-trash"></i>Thùng Rác</a>
+          {{-- <a href="{{ route('customer.create') }}" class="btn bg-success"><i class="fa-solid fa-plus"></i> Thêm </a> --}}
+          <a href="{{ route('customer.create') }}" class="btn bg-success"><i class="fa-solid fa-plus"></i> Thêm </a>
+          <a class=" btn  bg-danger" href="{{ route('customer.trash') }}"> <i class="fa fa-trash"></i>Thùng Rác</a>
         </div>
       </div>
       <div class="card-body">
@@ -45,56 +46,58 @@
 {{ $message['mgs'] }}
 </div>
 @endif
-        <table class="table table-bordered" id="myTable">
+        <table class="table table-bcustomered" id="myTable">
           <thead>
               <tr>
                   <th>#</th>
-                  <th>Hình ảnh</th>
-                  <th>Tên sản phẩm</th>
-                  <th>slug sản phẩm</th>
+                  <th>Tên liên hệ</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Địa chỉ</th>
                   <th>Chức năng</th>
                   <th>ID</th>
 
               </tr>
           </thead>
           <tbody>
-              @foreach ($list_category as $category)
+              @foreach ($list_customer as $customer)
               <tr>
               <td>
                   <input type="checkbox" name="" id="">
               </td>
-              <td>
-                <img width="50px" height="50px" src="{{asset('img/category/'.$category->image) }}" alt="{{ $category->image }}"> </td>
-              <td>{{$category->name}}</td>
-              <td>{{$category->slug}}</td>
-              <td>
-                <a class="btn btn-sm btn-success" href="{{ route('category.show',['category'=>$category->id]) }}"><i class="fa fa-eye"></i></a>
 
-                <a href="{{route('category.edit',['category'=>$category->id])}}" class="btn btn-sm btn-primary"><i class="fa-regular fa-pen-to-square"></i></a>
-                  {{-- <form class="btn btn-sm " action="{{ route('category.destroy',['category'=>$category->id]) }}" method="post">
+              <td>{{$customer->name}}</td>
+              <td>{{$customer->email}}</td>
+              <td>{{$customer->phone}}</td>
+              <td>{{$customer->title}}</td>
+              <td>
+                <a class="btn btn-sm btn-success" href="{{ route('customer.show',['customer'=>$customer->id]) }}"><i class="fa fa-eye"></i></a>
+
+                  {{-- <a href="{{route('customer.edit',['customer'=>$customer->id])}}" class="btn btn-sm btn-primary"><i class="fa-regular fa-pen-to-square"></i></a> --}}
+                  {{-- <form class="btn btn-sm " action="{{ route('customer.destroy',['customer'=>$customer->id]) }}" method="post">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-sm btn-danger">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </form> --}}
-                <a href="{{ route('category.delete', ['category' => $category->id]) }}"
+                <a href="{{ route('customer.delete', ['customer' => $customer->id]) }}"
                     class="btn btn-sm btn-danger" title="delete">
                     <i class="fa-solid fa-trash"></i>
                 </a>
-                @if ($category->status==1)
-                <a href="{{route('category.status',['category'=>$category->id])}}" class="btn btn-sm btn-primary">
+                @if ($customer->status==1)
+                <a href="{{route('customer.status',['customer'=>$customer->id])}}" class="btn btn-sm btn-primary">
                     <i class="fas fa-toggle-on"></i>
                 </a>
 
                 @else
-                <a href="{{route('category.status',['category'=>$category->id])}}" class="btn btn-sm btn-danger">
+                <a href="{{route('customer.status',['customer'=>$customer->id])}}" class="btn btn-sm btn-danger">
                     <i class="fas fa-toggle-off"></i>
                 </a>
                 @endif
 
               </td>
-              <td>{{$category->id}}</td>
+              <td>{{$customer->id}}</td>
             </tr>
               @endforeach
 

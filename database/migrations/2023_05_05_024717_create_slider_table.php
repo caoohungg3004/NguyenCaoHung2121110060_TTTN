@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('2121110052_slider', function (Blueprint $table) {
+        Schema::create('2121110060_slider', function (Blueprint $table) {
             $table->id();
             $table->string('name',1000)->comment('Tên slider');
             $table->string('link',1000);
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('2121110052_slider');
+        Schema::dropIfExists('2121110060_slider');
     }
 };

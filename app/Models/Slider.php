@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Slider extends Model
 {
     use HasFactory;
-    protected $table='2121110052_slider';
+    protected $table='2121110060_slider';
 
 }

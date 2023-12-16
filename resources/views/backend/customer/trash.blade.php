@@ -7,12 +7,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Thùng rác danh mục </h1>
+          <h1>Trash customer</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Thùng rác category</li>
+            <li class="breadcrumb-item active">Thùng rác customer</li>
           </ol>
 
         </div>
@@ -29,7 +29,7 @@
 
         <div class="card-tools">
 
-          <a class=" btn  bg-primary" href="{{ route('category.index') }}"> <i class="fa-solid fa-arrow-left"></i>Quay về</a>
+          <a class=" btn  bg-primary" href="{{ route('customer.index') }}"> <i class="fa-solid fa-arrow-left"></i>Quay về</a>
         </div>
       </div>
       <div class="card-body">
@@ -41,35 +41,39 @@
 {{ $message['mgs'] }}
 </div>
 @endif
-        <table class="table table-bordered">
+        <table class="table table-bcustomered">
           <thead>
               <tr>
                   <th>#</th>
-                  <th>Hình ảnh</th>
-                  <th>Tên sản phẩm</th>
-                  <th>slug sản phẩm</th>
+                  <th>Tên liên hệ</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Địa chỉ</th>
                   <th>Chức năng</th>
                   <th>ID</th>
 
               </tr>
           </thead>
           <tbody>
-              @foreach ($list_category as $category)
+              @foreach ($list_customer as $customer)
               <tr>
               <td>
                   <input type="checkbox" name="" id="">
               </td>
-              <td> <img width="50px" height="50px" src="{{asset('img/category/'.$category->image) }}" alt=""> </td>
-              <td>{{$category->name}}</td>
-              <td>{{$category->slug}}</td>
+              <td>{{$customer->name}}</td>
+
+              <td>{{$customer->email}}</td>
+              <td>{{$customer->phone}}</td>
+              <td>{{$customer->address}}</td>
+
               <td>
 
-                <a href="{{route('category.show',['category'=>1])}}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                <a href="{{ route('category.destroy', ['category' => $category->id]) }}"
+                <a href="{{route('customer.show',['customer'=>1])}}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+                <a href="{{ route('customer.destroy', ['customer' => $customer->id]) }}"
                     class="btn btn-sm btn-danger" title="delete">
                     <i class="fa-solid fa-trash"></i>
                 </a>
-                <a href="{{ route('category.restore', ['category' => $category->id]) }}"
+                <a href="{{ route('customer.restore', ['customer' => $customer->id]) }}"
                     class="btn btn-sm btn-primary" title="restore">
                     <i class="fa-solid fa-rotate"></i>
                 </a>
@@ -77,7 +81,7 @@
 
 
               </td>
-              <td>{{$category->id}}</td>
+              <td>{{$customer->id}}</td>
             </tr>
               @endforeach
 

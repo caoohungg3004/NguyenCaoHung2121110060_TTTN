@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('2121110052_orderdetail', function (Blueprint $table) {
+        Schema::create('2121110060_orderdetail', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('order_id')->comment('mã đơn hàng');
             $table->unsignedInteger('product_id')->comment('mã sản phẩm');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('2121110052_orderdetail');
+        Schema::dropIfExists('2121110060_orderdetail');
     }
 };

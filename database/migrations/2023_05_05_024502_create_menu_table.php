@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('2121110052_menu', function (Blueprint $table) {
+        Schema::create('2121110060_menu', function (Blueprint $table) {
             $table->id();
             $table->string('name',255)->comment('tên menu');
             $table->string('link',255);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('2121110052_menu');
+        Schema::dropIfExists('2121110060_menu');
     }
 };

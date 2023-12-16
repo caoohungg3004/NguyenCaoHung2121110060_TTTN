@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $table='2121110052_post';
+    protected $table='2121110060_post';
 
 }

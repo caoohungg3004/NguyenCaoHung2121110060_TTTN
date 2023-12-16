@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_brand', function (Blueprint $table) {
+        Schema::create('2121110060_brand', function (Blueprint $table) {
             $table->id();//id
             $table->string('name',1000)->unique()->comment('Tên danh mục');
             $table->string('slug',1000)->unique()->comment('slug danh mục');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('2121110052_brand');
+        Schema::dropIfExists('2121110060_brand');
     }
 };

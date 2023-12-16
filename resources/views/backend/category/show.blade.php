@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>CHI TIẾT THƯƠNG HIỆU</h1>
+                    <h1>CHI TIẾT danh mục</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="">Home</a></li>
-                        <li class="breadcrumb-item active">Chi tiết thương hiệu</li>
+                        <li class="breadcrumb-item active">Chi tiết danh mục</li>
                     </ol>
                 </div>
             </div>

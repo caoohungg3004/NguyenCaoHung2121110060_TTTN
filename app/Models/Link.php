@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Link extends Model
 {
     use HasFactory;
-    protected $table='2121110052_link';
+    protected $table='2121110060_link';
     public $timestamps = false;
 }

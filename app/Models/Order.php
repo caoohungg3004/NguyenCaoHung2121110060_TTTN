@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $table='2121110052_order';
+    protected $table='2121110060_order';
 
 }
